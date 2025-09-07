@@ -1,66 +1,44 @@
-# 🌱 Smart Irrigation Advisor for Sustainable Agriculture
-
-## 📌 Project Overview
-Agriculture consumes nearly **70% of global freshwater resources**, yet much of it is wasted due to **over-irrigation or under-irrigation**.  
-This project develops a **Smart Irrigation Advisor** software that uses soil moisture, rainfall, and temperature data to recommend **optimal irrigation schedules**, helping farmers:
-
-- 💧 Save water  
-- 🌾 Improve crop yield  
-- 🌍 Promote sustainable agriculture  
 
 ---
 
-## 📅 Project Timeline
-
-- **Week 1 (30%)** – Dataset preparation + system design ✅  
-- **Week 2 (30%)** – Prototype development (Python-based irrigation advisor)  
-- **Week 3 (40%)** – Final implementation, testing, and project report  
-
----
-
-## 📊 Dataset (Week 1)
-
+## 📊 Week 1 – Dataset Preparation
 The dataset simulates real farm data for **20 days**, including soil moisture, rainfall, temperature, crop type, and irrigation requirement.
 
-**Columns:**
-- `Date` – Day of observation  
-- `Soil_Moisture (%)` – Percentage of water in soil (<30% = dry)  
-- `Rainfall (mm)` – Daily rainfall in millimeters  
-- `Temperature (°C)` – Average daily temperature  
-- `Crop_Type` – Wheat, Rice, or Maize  
-- `Irrigation_Required` – Yes/No (based on sustainability rules)  
-
-📂 Files included:  
-- [`data/Smart_Irrigation_Week1_Dataset.csv`](./data/Smart_Irrigation_Week1_Dataset.csv)   
-- Week 1 Report (in `docs/` folder)  
-
-**Sample Data:**
-
-| Date       | Soil_Moisture (%) | Rainfall (mm) | Temperature (°C) | Crop_Type | Irrigation_Required |
-|------------|------------------|---------------|------------------|-----------|----------------------|
-| 2025-09-01 | 25               | 0             | 32               | Wheat     | Yes                  |
-| 2025-09-02 | 40               | 5             | 30               | Wheat     | No                   |
-| 2025-09-03 | 18               | 0             | 34               | Rice      | Yes                  |
-| 2025-09-04 | 60               | 12            | 28               | Rice      | No                   |
-| 2025-09-05 | 22               | 0             | 33               | Wheat     | Yes                  |
+📂 Files:  
+- [`week1/Smart_Irrigation_Week1_Dataset.csv`](./week1/Smart_Irrigation_Week1_Dataset.csv)  
+- [`week1/Smart_Irrigation_Week1_Dataset.xlsx`](./week1/Smart_Irrigation_Week1_Dataset.xlsx)  
+- [`week1/Week1_Report.pdf`](./week1/Week1_Report.pdf)  
 
 ---
 
-## 🏗️ System Design
+## 🤖 Week 2 – Prototype Development
+In Week 2, a **Python-based rule engine** was developed to automatically predict irrigation requirements.
 
-### Architecture
-1. **Input Layer:** Soil Moisture, Rainfall, Temperature, Crop Type  
-2. **Processing Layer:** Rule-based decision algorithm  
-   - If `Soil Moisture < 30%` AND `Rainfall < 5 mm` → Irrigation Required = Yes  
-   - Else → Irrigation Required = No  
-3. **Output Layer:** Irrigation recommendation (Yes/No)  
+### 🔹 Methodology
+- Rule: If `Soil Moisture < 30%` and `Rainfall < 5mm` → **Irrigation Required = Yes**  
+- Otherwise → **No irrigation needed**  
+- Implemented using **pandas** for data processing and **matplotlib** for visualization  
 
-### Flowchart
-```mermaid
-flowchart TD
-    A[Start] --> B[Collect Input Data: Soil, Rainfall, Temp, Crop]
-    B --> C{Soil Moisture < 30%?}
-    C -- No --> D[No Irrigation Required]
-    C -- Yes --> E{Rainfall > 10mm?}
-    E -- Yes --> D
-    E -- No --> F[Irrigation Required]
+### 📂 Week 2 Files
+- [`week2/Week2_Output_With_Predictions.csv`](./week2/Week2_Output_With_Predictions.csv) – Predictions output  
+- [`week2/week2_irrigation_advisor.py`](./week2/week2_irrigation_advisor.py) – Python prototype code  
+- [`week2/Week2_Report.pdf`](./week2/Week2_Report.pdf) – Week 2 Report (PDF)  
+- [`week2/Week2_Report.docx`](./week2/Week2_Report.docx) – Week 2 Report (Word)  
+
+### ✅ Results
+- Predictions achieved **100% accuracy** compared to Week 1 dataset.  
+- Scatter plot shows irrigation requirement (Yes = Red, No = Green).  
+
+---
+
+## 🚀 Next Steps (Week 3)
+- Expand dataset (50–100 rows, more crops).  
+- Upgrade system to **Machine Learning (Decision Trees/Random Forests)**.  
+- Build a simple **user interface** for farmers.  
+- Prepare **final project report + presentation**.  
+
+---
+
+## 🧑‍💻 Author
+👤 Komal Singh
+📅 Project Duration: 3 Weeks  
